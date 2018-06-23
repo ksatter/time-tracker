@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Time Tracker</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Employee Data Management</h1>
+            <h3 class="text-center">A Comprehensive Directory of Employee Billable Hourrs</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <h4>Add New Employee</h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 col-lg-6">
+                        <form>
+                            <div class="form-group row">
+                                <label for="employee-name">Name</label>
+                                <input type="text" class="form-control" id="employee-name" placeholder="John Doe" required/>
+                            </div>
+                            <div class="form-group row">
+                                <label for="employee-role">Role</label>
+                                <input type="text" class="form-control" id="employee-role" placeholder="Data Manager" required/>
+                            </div>
+                            <div class="form-group row">
+                                <label for="employee-start-date">Start Date</label>
+                                <input type="date" class="form-control" id="employee-start-date" placeholder="12/12/2008" required/>
+                            </div> 
+                            <div class="form-group row">
+                                <label for="employee-monthly-pay">Monthly Salary</label>
+                                <input type="text" class="form-control" id="employee-monthly-pay" placeholder="5200" required/>
+                            </div>  
+                            <button class="btn btn-primary" id="add-employee" type="submit">Add Employee</button>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-sm-12">
+                <div class="row">
+                    <h4>Current Employees</h4>
+                </div>
+                <div class="row">
+                    <table class="table table-striped table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">Months Worked</th>
+                                <th scope="col">Monthly Rate ($)</th>
+                                <th scope="col">Total Paid ($)</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody id="employee-table">
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/logic.js"></script>
+</body>
+</html>
